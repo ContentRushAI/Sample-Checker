@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>3D Model Checker</title>
+
+<script type="module"
+src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
+</script>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+background:white;
+}
+
+model-viewer{
+width:100vw;
+height:100vh;
+background:white;
+}
+
+#ar-button{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+
+background:black;
+color:white;
+
+border:none;
+border-radius:12px;
+
+padding:12px 24px;
+
+font-size:18px;
+font-family:Arial;
+
+z-index:100;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<model-viewer
+src="model.glb"
+scale="1 1 1"
+ar
+ar-modes="scene-viewer webxr quick-look"
+camera-controls
+auto-rotate
+shadow-intensity="1"
+environment-image="neutral">
+
+<button slot="ar-button" id="ar-button">
+View in 3D
+</button>
+
+</model-viewer>
+
+</body>
+</html>
